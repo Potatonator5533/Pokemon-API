@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <br><br><br>
+    <div class="flex justify-center">
+        <div class="grid xl:grid-cols-3 gap-10">
+            <div class="flex justify-center m-2">
+                <div class="flex items-center">
+                    <div class="relative w-80 font30">
+                        <input type="text" id="simple-search"
+                            class="bg-gray-50 border border-black text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search Pokémon" required>
+                    </div>
+                    <button
+                        class="p-2.5 ms-2 text-sm font-medium text-black bg-white rounded-lg border border-black hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                        <svg class="w-4 h-4" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-center m-2"><button id="randomPokémon"
+                    class="bg-white rounded-lg border border-black w-80 font30 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">Get
+                    Random Pokémon</button></div>
+
+            <div class="flex justify-center self-center m-2">'
+                <!-- drawer init and toggle -->
+                <div class="text-center">
+                    <button id="getFavorites"
+                        class="bg-white rounded-lg border border-black w-80 font30 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
+                        aria-controls="drawer-example">Open Favorites List
+                    </button>
+                </div>
+                <!-- drawer component -->
+                <div id="drawer-example"
+                    class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+                    tabindex="-1" aria-labelledby="drawer-label">
+                    <h5 id="drawer-label"
+                        class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+                        <p>Favorites</p>
+                    </h5>
+                    <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close menu</span>
+                    </button>
+                    <div class="flex justify-center">
+                        <p id="getFavoritesDiv" class="mb-6 text-sm text-gray-500 dark:text-gray-400">Pokémon</p>
+                        <!-- <button
+                            class="bg-red-600 text-white rounded-lg border border-black h-40 w-full font20 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <div class="grid grid-cols-2 grid-rows-3 h-32">
+                                <div class="">
+                                    <div class="flex justify-center row-span-3 ml-1 size-32"><img src=""
+                                            alt="Pokémon Image" class=" self-center"></div>
+                                </div>
+                                <div>
+                                    <p class=" font20">Pokémon Name</p>
+                                </div>
+                                <div class="col-start-2">
+                                    <img src="" alt="Type 1">
+
+                                </div>
+                                <div class="col-start-2">
+                                    <img src="" alt="Type 2">
+                                </div>
+                            </div>
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between xl:col-start-2 m-2">
+                <p id="pokémonName" class="text-white stroke-1 stroke-black font50">Pokémon Name</p>
+                <button><img id="saveToFavorites" src="./assets/NotFavorite.png" alt="Save to Favorites Button"></button>
+            </div>
+            <div class="flex justify-between self-start m-2 col-start-1">
+                <img id="type1" src="" alt="Type 1">
+                <img id="type2" src="" alt="Type 2">
+            </div>
+            <div class="flex justify-center row-span-3 m-2" style="width: 400px; height: 400px;"><img id="pokémonImg"
+                    src="" alt="Pokémon Image" class=" self-center"></div>
+            <div class="self-start m-2">
+                <p id="pokémonNumber" class="text-black xl:text-white font50">#0</p>
+            </div>
+            <div class="flex justify-center self-end row-span-2 m-2 h-32" style="width: 400px;">
+                <p id="pokémonLocation" class="font30">A Location</p>
+            </div>
+            <div class="flex justify-center self-end row-span-2 m-2 h-32 overflow-y-auto" style="width: 400px;">
+                <p id="moves" class="font30">Moves</p>
+            </div>
+            <div class="flex justify-center m-2 h-32 overflow-y-auto" style="width: 400px;">
+                <p id="abilites" class="font30">Abilites</p>
+            </div>
+            <div class="flex justify-center xl:col-span-2 m-2 h-32 w-856">
+                <p id="evolutionLine" class="font30">Evolution Line</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script type="module" src="./script/app.js"></script>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>
