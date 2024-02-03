@@ -2,5 +2,5 @@
 //2/2/2024
 //Pokemon API Challenge
 //A Pokédex that displays much information about a chosen pokémon. Up to gen 5.
-//Peer Name: 
-//Peer Review: 
+//Peer Name: Jerrod Packard
+//Peer Review: I think the search button isn't working. When I type in a pokemon name, I have to hit enter to get the web app to search. This is fine, but it's a little deceptive having the search button next to it if it doesn't work. The random pokemon button works great and I love that the evolutions work. The responsiveness isn't perfect though and the background makes some of the text difficult to read at certain screen resolutions. The black text will blend into the black stripe on the pokeball background, making it impossible to read. Your favorites list works well, but for some reason I have to hit the escape key to exit the favorites menu after closing it. It leaves this black background on the screen and none of the elements are clickable for me. Hitting the escape key is the only way to restore functionality of the web app. I also don't see a way to get the shiny picture of the pokemon to appear. Aside from that, everything works as intended. Good work Josue!
